@@ -4,11 +4,11 @@
   "description": "Boilerplate to get up your TypeScript fastify backend easy up and running with blazing fast tech",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon",
-    "test": "vitest",
-    "coverage": "vitest run --coverage",
+    "start": "nodemon",
+    "build": "npm run lint && esbuild src/index.ts --bundle --platform=node --target=node16.14.0 --outfile=build/index.js --minify",
     "lint": "eslint . --ext .ts",
-    "build": "npm run lint && esbuild src/index.ts --bundle --platform=node --target=node16.14.0 --outfile=build/index.js --minify"
+    "test": "vitest",
+    "coverage": "vitest run --coverage"
   },
   "repository": {
     "type": "git",
@@ -25,7 +25,9 @@
   },
   "homepage": "https://github.com/shpetimselaci/fastify-esbuild-typescript-vite#readme",
   "dependencies": {
-    "fastify": "^3.27.4"
+    "fastify": "^3.27.4",
+    "fastify-cors": "^6.0.3",
+    "undici": "^4.15.1"
   },
   "devDependencies": {
     "@types/node": "^17.0.21",

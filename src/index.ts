@@ -1,15 +1,27 @@
 import fastify from "fastify";
-
+import cors from "fastify-cors";
 const server = fastify();
 
-server.get("/ping", async (request, reply) => {
-  return "pong\n";
-});
+const startServer = () =>
+  new Promise((resolve, reject) => {
+    server.register(cors);
+    server.get("/ping", async (request, reply) => {
+      reply.send({ text: "pong" });
+    });
 
-server.listen(8080, (err, address) => {
-  if (err) {
-    console.error(err);
-    process.exit(1);
-  }
-  console.log(`Server listening at ${address}`);
-});
+    server.listen(8080, (err, address) => {
+      if (err) {
+        console.error(err);
+        reject(err);
+        process.exit(1);
+      }
+      console.log(`Server listening at ${address}`);
+      resolve(server);
+    });
+  });
+
+if (process.env.NODE_ENV !== "test") {
+  startServer();
+}
+
+export default startServer;
