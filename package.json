@@ -18,7 +18,7 @@
     "node": "16.14.0"
   },
   "keywords": [],
-  "author": "",
+  "author": "Shpetim Selaci",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/shpetimselaci/fastify-esbuild-typescript-vite/issues"
