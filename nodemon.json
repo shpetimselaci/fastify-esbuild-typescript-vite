@@ -1,0 +1,7 @@
+{
+  "watch": ["src"],
+  "ignore": ["src/**/*.test.ts", "*.config.ts"],
+  "ext": "ts,mjs,js,json,graphql",
+  "exec": "esbuild src/index.ts --bundle --platform=node --target=node16.14.0 --outfile=build/index.js && node ./build/index.js",
+  "legacyWatch": true
+}
