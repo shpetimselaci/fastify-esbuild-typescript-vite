@@ -15,7 +15,7 @@
     "url": "git+https://github.com/shpetimselaci/fastify-esbuild-typescript-vite.git"
   },
   "engines": {
-    "node": "16.14.0"
+    "node": ">=16.14.0"
   },
   "keywords": [],
   "author": "Shpetim Selaci",
