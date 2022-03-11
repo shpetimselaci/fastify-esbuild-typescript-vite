@@ -7,7 +7,7 @@ beforeAll(async () => {
 });
 
 test("Testing whether the only get endpoint works", async () => {
-  const { body } = await request("http://localhost:8080/ping", { method: "GET" });
+  const { body } = await request("http://localhost:8080/ping");
   const response: string = await body.json();
 
   expect(response).toStrictEqual({ text: "pong" });
