@@ -1,6 +1,6 @@
 {
   "name": "fastify-esbuild-typescript-vite",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "Boilerplate to get up your TypeScript fastify backend easy up and running with blazing fast tech",
   "main": "index.js",
   "scripts": {
