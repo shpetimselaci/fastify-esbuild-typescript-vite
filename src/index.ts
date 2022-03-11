@@ -6,7 +6,7 @@ const startServer = () =>
   new Promise((resolve, reject) => {
     server.register(cors);
     server.get("/ping", async (request, reply) => {
-      reply.send({ text: "pong" });
+      return { text: "pong" };
     });
 
     server.listen(8080, (err, address) => {
